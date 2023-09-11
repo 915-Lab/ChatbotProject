@@ -1,6 +1,7 @@
 import json
 import requests
 import pandas as pd  # 엑셀 파일 읽기 위함
+import os
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill
 
@@ -70,6 +71,9 @@ def data_crawler(dept_name, dept_id):
 
     :return:
     """
+
+    os.makedirs('data/qna', exist_ok=True)
+
     dynamic_offset = 0  # 동적으로 변경되는 offset
 
     co = 1
