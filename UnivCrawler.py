@@ -96,7 +96,9 @@ def data_crawler(dept_name, dept_id):
         for q_data in qna_data['result']['questions']:
             print(f"{co}번 질문 : " + q_data['title'])
             qna_dict = {}
-            qna_dict['질문'] = q_data['title']
+            
+            qna_dict['제목'] = q_data['title']
+            qna_dict['질문'] = q_data['text']
 
             # 답변이 달려있지 않을 경우에는 answer가 없기 때문에 예외 처리
             if q_data.get('answer'):
